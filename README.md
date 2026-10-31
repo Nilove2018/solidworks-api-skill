@@ -291,7 +291,9 @@ the type library or the official help, never from memory.**
 
 ## License
 
-[MIT](LICENSE). Use it, change it, ship it.
+[MIT](LICENSE) © 2026 Nilove Mandal (portions © guoleizhen717, the original v1.0 skill).
+Free to use, change and share, including commercially, as long as you keep the copyright notice
+and the license text.
 
 <sub>SOLIDWORKS is a registered trademark of Dassault Systèmes SolidWorks Corporation. This project
 is independent and is not affiliated with, endorsed by, or sponsored by Dassault Systèmes.
