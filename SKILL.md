@@ -13,7 +13,7 @@ description: >
   configuration, mate, limit mate, flexible, assembly, .SLDPRT, .SLDASM, .swp, VBA macro, swconst,
   Toolbox, enclosure, 3D-print part, drawing, SLDDRW, GD&T, tolerance, dimension, vent, existing part,
   test run.
-version: 2.3.1
+version: 2.3.2
 author: Nilove Mandal
 tags: [solidworks, cad, com-api, pywin32, vba, automation, mechanical-design, assembly, 3d-printing]
 ---
@@ -903,8 +903,9 @@ then `saveIncr()`; STEP by rewriting the author list in the header `FILE_NAME(na
 ...)` (read and write latin-1, double any `'`). `swlib.stamp_pdf` / `stamp_step` do both.
 
 **Hidden data inside a model: a hidden attribute** [PROVEN 2026-10-31]. It is saved with the file,
-isn't shown in the FeatureManager tree, survived save, close and reopen, and appears in a feature
-traversal as type `Attribute`:
+isn't shown in the FeatureManager tree (`GetUIState(swIsHiddenInFeatureMgr)` is True), survived
+save, close and reopen, and appears in a feature traversal as type `Attribute`. The snippet below
+ran exactly as written (SolidWorks Test Run, 2026-10-31); it also works in a drawing:
 
 ```python
 d = cast(app.DefineAttribute("MyDataDef"), "IAttributeDef")
@@ -1567,7 +1568,7 @@ End Sub
 | **swlib.py**: early-bound API layer (model-coordinate sketching on any plane, verified planes, axes, extrude/cut between coordinates, revolve, shell, fillet/chamfer by geometry, outline text, equations, colours, export, `Asm` with placement + mates) | `examples/swlib.py` |
 | swlib 2.1 additions from the torsion-spring build: `NOTHING`, `dispatch_array`, `com_put`, `newest`, plane flip retry, `Part.feature`, `extent`/`extents`, `helix` + `helix_hand`, `sweep_circular`, `combine_add`, `set_global`, configurations (`add_configuration`, `suppress_in`, `suppression`), per-configuration `color`, material read-back, `Asm.add(config=)`, angle-limit `mate`, `mates`/`mate_errors`, `make_flexible`, two-pass `interference`, `SwApp.close_created`, startup wait. All ran early-bound on 2025 SP1.2 (2026-10-30) except the startup wait | `examples/swlib.py` |
 | swlib 2.2 additions from the caliper and vent builds: `Asm.mate(verify=)`, save by path (`close_other`), `plane_3pts`, `name_entity` / `entity`, `folder`, `delete_group`, `ray_hits`, `backup`, `log`. All ran early-bound on 2025 SP1.2 (SolidWorks Test Run, 2026-10-31) | `examples/swlib.py` |
-| Hidden and signed metadata (an author credit): summary info + custom property + hidden attribute + NTFS stream + HMAC signature + STEP/PDF author (`stamp_credit`, `read_credit`, `stamp_file_ads`, `stamp_step`, `stamp_pdf`; set `SwApp.credit` to stamp on every save). Part, assembly, STEP and PDF checked INTACT (2026-10-31). Check files with `tools/verify_credit.py` (SOLIDWORKS files only with `--sldworks`, see 8) | `examples/swlib.py`, `tools/verify_credit.py` |
+| Hidden and signed metadata (an author credit): summary info + custom property + hidden attribute + NTFS stream + HMAC signature + STEP/PDF author (`stamp_credit`, `read_credit`, `stamp_file_ads`, `stamp_step`, `stamp_pdf`; set `SwApp.credit` to stamp on every save). Part, assembly, drawing, STEP and PDF checked INTACT (2026-10-31; SOLIDWORKS files read back in the stamping process). Check files with `tools/verify_credit.py` (SOLIDWORKS files only with `--sldworks`, see 8) | `examples/swlib.py`, `tools/verify_credit.py` |
 | SolidWorks Test Run template (rule 1.14) | `examples/00_test_run_template.py` |
 | Parametric plate: sketches, cuts, fillet and chamfer by geometry, global variables, checks, STEP/STL export | `examples/01_parametric_plate.py` |
 | Skeleton + parts + pinned assembly with mates, constraint check, interference check | `examples/02_pinned_assembly.py` |

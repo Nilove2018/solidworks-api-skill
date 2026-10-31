@@ -37,8 +37,8 @@ Each script prints its checks and ends with `ALL CHECKS PASSED` (exit code 0) or
   `folder`, `delete_group`, `ray_hits`, `backup`, `log`) passed a SolidWorks Test Run on
   2026-10-31 (14 of 14 checks).
 - The author-credit helpers (`stamp_credit`, `read_credit`, `stamp_file_ads`, `stamp_step`,
-  `stamp_pdf`) stamped a part, an assembly, a STEP and a PDF, and all four checked INTACT
-  (2026-10-31). Drawings aren't tested yet. Check SOLIDWORKS files from a second process only with
+  `stamp_pdf`) stamped a part, an assembly, a drawing, a STEP and a PDF, and all five checked
+  INTACT (2026-10-31). Check SOLIDWORKS files from a second process only with
   your work saved: one such check was followed by a SOLIDWORKS crash (SKILL.md §8).
 - Set `SW_TLB_MAJOR=32` (2024) or `31` (2023) to force an older type library.
 

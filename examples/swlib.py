@@ -29,8 +29,8 @@ path, plane through 3 points, entity names, feature groups, ray casting, backup,
 them ran early-bound on SOLIDWORKS 2025 SP1.2 (SolidWorks Test Run, 2026-10-31).
 
 Skill 2.3 adds the author-credit helpers (stamp_credit, read_credit, stamp_file_ads, stamp_step,
-stamp_pdf; set SwApp.credit to stamp every save). A part, an assembly, a STEP and a PDF checked
-INTACT (2026-10-31); drawings aren't tested yet. Verify in the process that stamped: a second
+stamp_pdf; set SwApp.credit to stamp every save). A part, an assembly, a drawing, a STEP and a
+PDF checked INTACT (2026-10-31). Verify in the process that stamped: a second
 process reading the files was followed by a SOLIDWORKS crash (cause not proven).
 """
 from __future__ import annotations

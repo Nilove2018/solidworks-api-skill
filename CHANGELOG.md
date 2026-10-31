@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.3.2 (2026-10-31)
+
+SolidWorks Test Runs of the whole `swlib` after the 2.3 changes: 58 of 58 checks passed
+(2.1 part helpers 15, 2.1 assembly helpers 15, 2.2 helpers 14, 2.3 checks 14).
+
+### Changed
+- §8: the hidden-attribute snippet ran exactly as written, is hidden in the tree, and also works in
+  a drawing.
+- §16 and `examples/README.md`: the author credit is now proven on drawings too (part, assembly,
+  drawing, STEP and PDF all INTACT).
+
 ## 2.3.1 (2026-10-31)
 
 ### Removed
