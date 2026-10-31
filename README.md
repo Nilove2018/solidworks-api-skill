@@ -279,10 +279,14 @@ the type library or the official help, never from memory.**
 
 ## Credits
 
-- Original Chinese skill by [@guoleizhen717](https://github.com/guoleizhen717)
-  (*solidworks-api-skill*, MIT), written during a shield-machine cutterhead (盾构机刀盘) project.
-- Version 2 (translation, corrections, Python layer, assembly workflow, examples, tools) by
-  **[Nilove Mandal](https://github.com/Nilove2018)**, from real product development work in 2026.
+- **[Nilove Mandal](https://github.com/Nilove2018)**: version 2 and later, a rewrite built from
+  real product development work in 2026. The corrected constants and signatures, the binding rules,
+  the `swlib` layer, the assembly, configuration, drawing and verification workflows, the examples,
+  tools and docs, and the lessons from each build that went into the skill.
+- Starting point: the v1.0 Chinese skill by [@guoleizhen717](https://github.com/guoleizhen717)
+  (*solidworks-api-skill*, MIT), written for a shield-machine cutterhead (盾构机刀盘) project.
+  Several of its constants and API claims were wrong and are corrected here (see
+  [Fixes compared with the original skill](#fixes-compared-with-the-original-skill)).
 - API references: [SOLIDWORKS API Help](https://help.solidworks.com/2025/english/api/sldworksapiprogguide/Welcome.htm).
 
 ## License
