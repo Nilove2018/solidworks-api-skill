@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-label="SOLIDWORKS API Skill for Claude Code">
+  <defs><marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#fbbf24"/></marker><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="#0d2741"/></linearGradient><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0 L0 0 0 24" fill="none" stroke="#1d3a57" stroke-width="0.6"/></pattern><marker id="flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="flowg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker></defs>
+  <rect width="1280" height="360" rx="18" fill="url(#bg)"/>
+  <rect width="1280" height="360" rx="18" fill="url(#grid)" opacity="0.7"/>
+  <text x="64" y="92" fill="#7dd3fc" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="16" letter-spacing="3">CLAUDE CODE SKILL  ·  PLUGIN</text>
+  <text x="62" y="152" fill="#f8fafc" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="54" font-weight="700">SOLIDWORKS API Skill</text>
+  <text x="64" y="196" fill="#cbd5e1" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="21">Parametric parts, sketches and mated assemblies, built by Claude</text>
+  <text x="64" y="224" fill="#94a3b8" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17">Python (pywin32) · VBA macros · SOLIDWORKS 2023 – 2025</text>
+  <rect x="64" y="246" width="188" height="34" rx="17" fill="#0f2f4d" stroke="#38bdf8" stroke-width="1"/><text x="158" y="268" fill="#bae6fd" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle">Exact API signatures</text><rect x="264.0" y="246" width="171" height="34" rx="17" fill="#0f2f4d" stroke="#38bdf8" stroke-width="1"/><text x="349" y="268" fill="#bae6fd" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle">Verified constants</text><rect x="446.79999999999995" y="246" width="154" height="34" rx="17" fill="#0f2f4d" stroke="#38bdf8" stroke-width="1"/><text x="524" y="268" fill="#bae6fd" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle">Mated assemblies</text><rect x="612.4" y="246" width="145" height="34" rx="17" fill="#0f2f4d" stroke="#38bdf8" stroke-width="1"/><text x="685" y="268" fill="#bae6fd" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle">Built-in checks</text>
+  <text x="64" y="322" fill="#64748b" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="13">FeatureExtrusion3(True, False, False, swEndCondBlind, 0, 0.006, 0, ...)  # 23 args, metres</text>
+  <g>
+    <polygon points="882.4,165.0 1062.5,269.0 1062.5,253.4 882.4,149.4" fill="#0e3a5c" stroke="#7dd3fc" stroke-width="1.6" stroke-linejoin="round"/>
+    <polygon points="1175.1,204.0 1062.5,269.0 1062.5,253.4 1175.1,188.4" fill="#0b2f4b" stroke="#7dd3fc" stroke-width="1.6" stroke-linejoin="round"/>
+    <polygon points="995.0,84.4 1175.1,188.4 1062.5,253.4 882.4,149.4" fill="#134b74" stroke="#7dd3fc" stroke-width="1.6" stroke-linejoin="round"/>
+    <ellipse cx="995.0" cy="105.2" rx="8.8" ry="5.1" fill="#061a2b" stroke="#7dd3fc" stroke-width="1.6" stroke-linejoin="round"/>
+    <ellipse cx="918.4" cy="149.4" rx="8.8" ry="5.1" fill="#061a2b" stroke="#7dd3fc" stroke-width="1.6" stroke-linejoin="round"/>
+    <ellipse cx="1139.1" cy="188.4" rx="8.8" ry="5.1" fill="#061a2b" stroke="#7dd3fc" stroke-width="1.6" stroke-linejoin="round"/>
+    <ellipse cx="1062.5" cy="232.6" rx="8.8" ry="5.1" fill="#061a2b" stroke="#7dd3fc" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M1003.3,168.9 L1003.3,148.1 L1054.2,148.1 L1054.2,168.9 A25.5,14.7 0 0 1 1003.3,168.9 Z" fill="#0f4266" stroke="#7dd3fc" stroke-width="1.6"/>
+    <ellipse cx="1028.8" cy="148.1" rx="25.5" ry="14.7" fill="#1b5e8f" stroke="#7dd3fc" stroke-width="1.6"/>
+    <ellipse cx="1028.8" cy="148.1" rx="12.7" ry="7.4" fill="#061a2b" stroke="#7dd3fc" stroke-width="1.6"/>
+    <line x1="882.4" y1="165.0" x2="857.6" y2="179.3" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="1062.5" y1="269.0" x2="1037.8" y2="283.3" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="862.2" y1="176.7" x2="1042.3" y2="280.7" stroke="#fbbf24" stroke-width="1.4" marker-start="url(#arr)" marker-end="url(#arr)"/>
+    <text x="952.2" y="250.7" fill="#fbbf24" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="15" text-anchor="middle" transform="rotate(30 952.2 250.7)">80.00</text>
+    <line x1="1195.4" y1="215.7" x2="1082.8" y2="280.7" stroke="#fbbf24" stroke-width="1.4" marker-start="url(#arr)" marker-end="url(#arr)"/>
+    <text x="1157.1" y="262.2" fill="#fbbf24" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="15" text-anchor="middle" transform="rotate(-30 1157.1 262.2)">50.00</text>
+    <line x1="845" y1="250" x2="874.4" y2="267.0" stroke="#f87171" stroke-width="2.4"/>
+    <text x="884.8" y="278.0" fill="#f87171" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">X</text>
+    <line x1="845" y1="250" x2="815.6" y2="267.0" stroke="#4ade80" stroke-width="2.4"/>
+    <text x="805.2" y="278.0" fill="#4ade80" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Y</text>
+    <line x1="845" y1="250" x2="845.0" y2="216.0" stroke="#60a5fa" stroke-width="2.4"/>
+    <text x="845.0" y="209.0" fill="#60a5fa" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Z</text>
+  </g>
+</svg>

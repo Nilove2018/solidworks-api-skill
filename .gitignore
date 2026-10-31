@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# example output
+examples/out/
+
+# SOLIDWORKS lock / temp / backup files
+~$*
+*.SLDBAK
+*.swbak
+*.bak
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

@@ -1,0 +1,14 @@
+{
+  "name": "solidworks-api-skill",
+  "description": "SOLIDWORKS API automation skill for Claude Code",
+  "owner": {
+    "name": "Nilove Mandal"
+  },
+  "plugins": [
+    {
+      "name": "solidworks-api",
+      "source": "./",
+      "description": "Exact SOLIDWORKS API signatures, verified constants, parametric parts, mated assemblies, checks and exports."
+    }
+  ]
+}

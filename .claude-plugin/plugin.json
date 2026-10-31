@@ -1,0 +1,21 @@
+{
+  "name": "solidworks-api",
+  "version": "2.3.0",
+  "description": "Teaches Claude to automate SOLIDWORKS correctly: exact API signatures, verified swconst values, parametric parts, skeleton-based assemblies with mates, verification and export.",
+  "author": {
+    "name": "Nilove Mandal",
+    "url": "https://github.com/Nilove2018"
+  },
+  "homepage": "https://github.com/Nilove2018/solidworks-api-skill",
+  "repository": "https://github.com/Nilove2018/solidworks-api-skill",
+  "license": "MIT",
+  "keywords": [
+    "solidworks",
+    "cad",
+    "com-api",
+    "pywin32",
+    "vba",
+    "automation",
+    "mechanical-engineering"
+  ]
+}
