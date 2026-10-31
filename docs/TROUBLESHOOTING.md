@@ -25,8 +25,6 @@ Every entry below was hit in a real build, except where marked *(reported)*.
 | `TypeError` / type mismatch on an array argument | Python lists aren't `SAFEARRAY`s | wrap them: `VARIANT(pythoncom.VT_ARRAY \| pythoncom.VT_R8, values)` (`swlib.darr`) |
 | A ByRef output isn't returned | early-bound calls return ByRef outputs as a tuple | `doc, err, warn = app.OpenDoc6(...)`; `mate, err = asm.AddMate5(...)` |
 | `SyntaxError: unterminated string literal` after patching a script | a shell heredoc turned `"\n"` in the patch into a real newline | edit scripts with an editor or the Edit tool, never with shell find-and-replace |
-| Node.js `winax`: `SelectByID2` Callout type mismatch *(reported)* | winax can't pass a null dispatch | use `FeatureByName()` + `Select2()` |
-
 ## SOLIDWORKS behaviour
 
 | Symptom | Cause | Fix |

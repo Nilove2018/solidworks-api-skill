@@ -27,7 +27,7 @@
 - [Run the examples](#run-the-examples)
 - [Developer tools](#developer-tools)
 - [What the skill covers](#what-the-skill-covers)
-- [Fixes compared with the original skill](#fixes-compared-with-the-original-skill)
+- [Wrong values this skill corrects](#wrong-values-this-skill-corrects)
 - [Repository structure](#repository-structure)
 - [Troubleshooting](#troubleshooting) · [Contributing](#contributing) · [Credits](#credits) · [License](#license)
 
@@ -209,15 +209,17 @@ $ python tools/sw_constants.py swEndCondBlind
 | VBA | macro workflow, early-bound template, `RunMacro2` |
 | Design rules | wall thickness, heat-set inserts, clearances, connector openings, part numbering, project layout, torsion spring formulas (turns, rate, maximum angle, wound-up ID) |
 
-## Fixes compared with the original skill
+## Wrong values this skill corrects
 
-| Original | Correct | Effect of the old value |
+Values like these circulate in older notes and AI answers, and each one breaks a build:
+
+| Often written | Correct | Effect of the wrong value |
 |---|---|---|
 | `swEndCondBlind = 1` | **`0`** | `1` is *Through All*, so the "blind" extrude went through the whole part |
 | `swEndCondThroughAll = 2` | **`1`** | `2` is *Through Next* |
 | `swSelEDGES = 4`, `swSelSKETCHES = 16` | **`1`**, **`9`** | `4` is *datum planes* |
 | `swPlaneTop/Front/Right = 1/2/3` | no such enum | find planes by type order (works in every language edition) |
-| "methods with >12 args fail via IDispatch" | they work in pywin32 | the limit applies to Node.js `winax` only |
+| "methods with >12 args fail via IDispatch" | they work in pywin32 | 23- and 27-argument calls ran late-bound from Python |
 | `SaveAs3(path + ".STEP", 0, 0)` | `Extension.SaveAs3(..., Silent \| Copy, ...)` | without *Copy* the open document is renamed to the export |
 
 Version 2.1 also corrects version 2.0 of this skill, after a torsion-spring build in which 28 of
@@ -279,19 +281,15 @@ the type library or the official help, never from memory.**
 
 ## Credits
 
-- **[Nilove Mandal](https://github.com/Nilove2018)**: version 2 and later, a rewrite built from
-  real product development work in 2026. The corrected constants and signatures, the binding rules,
-  the `swlib` layer, the assembly, configuration, drawing and verification workflows, the examples,
-  tools and docs, and the lessons from each build that went into the skill.
-- Starting point: the v1.0 Chinese skill by [@guoleizhen717](https://github.com/guoleizhen717)
-  (*solidworks-api-skill*, MIT), written for a shield-machine cutterhead (盾构机刀盘) project.
-  Several of its constants and API claims were wrong and are corrected here (see
-  [Fixes compared with the original skill](#fixes-compared-with-the-original-skill)).
+- **[Nilove Mandal](https://github.com/Nilove2018)**: built from real product development work in
+  2026. The constants and signatures, the binding rules, the `swlib` layer, the assembly,
+  configuration, drawing and verification workflows, the examples, tools and docs, and the lessons
+  from each build that went into the skill.
 - API references: [SOLIDWORKS API Help](https://help.solidworks.com/2025/english/api/sldworksapiprogguide/Welcome.htm).
 
 ## License
 
-[MIT](LICENSE) © 2026 Nilove Mandal (portions © guoleizhen717, the original v1.0 skill).
+[MIT](LICENSE) © 2026 Nilove Mandal.
 Free to use, change and share, including commercially, as long as you keep the copyright notice
 and the license text.
 

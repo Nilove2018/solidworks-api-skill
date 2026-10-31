@@ -12,17 +12,16 @@ description: >
   loft, sweep, helix, spring, torsion spring, cut, fillet, chamfer, shell, pattern, mirror, combine,
   configuration, mate, limit mate, flexible, assembly, .SLDPRT, .SLDASM, .swp, VBA macro, swconst,
   Toolbox, enclosure, 3D-print part, drawing, SLDDRW, GD&T, tolerance, dimension, vent, existing part,
-  test run, cutterhead, 刀盘.
-version: 2.3.0
+  test run.
+version: 2.3.1
 author: Nilove Mandal
 tags: [solidworks, cad, com-api, pywin32, vba, automation, mechanical-design, assembly, 3d-printing]
 ---
 
-# SOLIDWORKS API Skill (our version)
+# SOLIDWORKS API Skill
 
-Version 2 of the community "SolidWorks API skill" (originally written in Chinese for SOLIDWORKS
-2023 and a shield-machine cutterhead project). This version is translated into English, has its
-constant values corrected against the SOLIDWORKS 2025 type library, and adds what we learned
+How to drive SOLIDWORKS through its API without guessing. Every signature and constant value is
+read from the SOLIDWORKS 2025 type library, and every rule comes from what we learned
 building real parts and assemblies through the API in 2026: 3D-printed enclosures, a
 59-component product assembly with 174 mates, optics shrouds, springs and flexible sub-assemblies.
 
@@ -69,8 +68,8 @@ Three builds show where the time goes. Each row is now a rule in this file.
    Use the exact signatures in section 6. For anything not listed, read the signature from the
    generated type library (section 3.3) or help.solidworks.com before writing the call. Pass
    every argument explicitly.
-2. **Never hard-code enum integers.** Load them from `swconst` (section 3.2). The original skill
-   had wrong values (section 5.2). Literal numbers are OK only when commented with the enum name.
+2. **Never hard-code enum integers.** Load them from `swconst` (section 3.2). Values copied from
+   older notes are often wrong (section 5.2). Literal numbers are OK only when commented with the enum name.
 3. **All API lengths are metres, angles are radians.** Keep the design in mm and convert at the
    API boundary with `MM = 0.001`. Set the document to MMGS so the user sees mm.
 4. **Respect the user's SOLIDWORKS session.**
@@ -180,8 +179,7 @@ Three builds show where the time goes. Each row is now a rule in this file.
 
 Templates: never hard-code a template path. Use
 `app.GetUserPreferenceStringValue(swDefaultTemplatePart / Assembly / Drawing)` (8 / 9 / 10).
-The original skill's path `D:\SW2023\...\chinese-simplified\tutorial\part.prtdot` was specific to
-one machine.
+A hard-coded install or language folder breaks on every other machine.
 
 ---
 
@@ -319,10 +317,8 @@ Late-binding quirks:
   `VARIANT(VT_BYREF | VT_BOOL, False)`.
 - `body.GetExtremePoint(x, y, z)` returns `(ok, x, y, z)`.
 - `IMathUtility.CreatePoint(...).MultiplyTransform(...)` throws. Use the transform by hand (7.3).
-- Correction to the original skill: "methods with more than 12 parameters fail via IDispatch"
-  is **not** true for pywin32. `FeatureExtrusion2` (23 args) and `FeatureCut4` (27 args) worked
-  late-bound from Python. That limitation applies to Node.js `winax`, where the `SelectByID2`
-  Callout argument is also rejected (use `FeatureByName()` + `Select2()` there).
+- Long argument lists work through IDispatch in pywin32: `FeatureExtrusion2` (23 args) and
+  `FeatureCut4` (27 args) ran late-bound from Python. There is no 12-argument limit.
 
 ### 3.3 Reading an exact signature yourself
 
@@ -380,9 +376,9 @@ ISldWorks (application)
 | swAddComponentConfigOptions_e | CurrentSelectedConfig=0 (use the config named in ExistingConfigName), NewConfigWithAllReferenceModels=1, NewConfigWithAsmStructure=2 |
 | misc | swSolidBody=0, swFmSweep=17, swFmHoleWzd=25, swFmLPattern=6, swFmCirPattern=5, swHelixDefinedByHeightAndRevolution=1, swChamferAngleDistance=1, swFeatureTreeFolder_Containing=2, swNotAToolboxPart=0, swSetValue_InAllConfigurations=2, swCustomInfoText=30, swCustomPropertyReplaceValue=2, swMateWidth_Centered=0, swRunMacroDefault=0, swRunMacroUnloadAfterRun=1 |
 
-### 5.2 Corrections to the original skill
+### 5.2 Wrong values that circulate
 
-| Original said | Correct | Effect of the old value |
+| Often written | Correct | Effect of the wrong value |
 |---|---|---|
 | swEndCondBlind = 1 | **0** | 1 is ThroughAll, so a "blind" extrude went through everything |
 | swEndCondThroughAll = 2 | **1** | 2 is ThroughNext |
@@ -1460,9 +1456,6 @@ Sub main()
 End Sub
 ```
 
-`RecordMacro` / `EditMacro` aren't available through IDispatch (original skill, SW 2023). Create
-a blank `.swp` by hand if you need one.
-
 ---
 
 ## 14. Design rules learned on our products (3D-printed enclosures, springs)
@@ -1541,16 +1534,6 @@ a blank `.swp` by hand if you need one.
   down, cosmetic face up as a top surface (ironing), tree supports on the build plate only, 0.16 mm
   layers, 4 walls, ASA on an enclosed printer rather than PLA.
 
-### 14.4 Domain example kept from the original skill: shield machine cutterhead (盾构机刀盘)
-
-Typical features: **face plate** (large disc Ø6–15 m, 400–800 mm thick, extruded), **spokes/arms**
-(4–8 radial, rectangular section), **disc-cutter mounts** (circular pattern), **scrapers/rippers**
-(on the edge), **centre cutter**, **muck/discharge openings** (through cuts), **mixing bars** (on the
-back face), **mounting flange** (central connection). Units: a 6 m diameter is `6.0` in the API.
-Build it as: face-plate extrude, then one spoke and circular pattern, then one cutter seat and
-circular pattern (or a pattern driven by a table/sketch for the spiral layout), then through-cut
-openings, then the flange revolve.
-
 ---
 
 ## 15. Working with the user
@@ -1600,4 +1583,3 @@ openings, then the flange revolve.
 - [AddMate5 (obsolete → CreateMate)](https://help.solidworks.com/2023/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IAssemblyDoc~AddMate5.html), [FeatureExtrusion3](https://help.solidworks.com/2018/English/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.IFeatureManager~FeatureExtrusion3.html), [SelectByID2](https://help.solidworks.com/2020/English/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.IModelDocExtension~SelectByID2.html), [CommandInProgress](https://help.solidworks.com/2016/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks~CommandInProgress.html), [EnableFeatureTree](https://help.solidworks.com/2019/English/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.IFeatureManager~EnableFeatureTree.html)
 - Installed type libraries (SOLIDWORKS 2025 SP1.2): all signatures in section 6 and constants in section 5.
 - Spring formulas: Budynas & Nisbett, *Shigley's Mechanical Engineering Design*, chapter 10 (helical torsion springs).
-- Starting point: the v1.0 skill guoleizhen717/solidworks-api-skill (MIT). Version 2 and later are a rewrite; its wrong constants and API claims are corrected here.

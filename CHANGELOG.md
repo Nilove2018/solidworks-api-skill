@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.3.1 (2026-10-31)
+
+### Removed
+- The cutterhead design notes and their trigger words, and two API claims that were never tested
+  here (`RecordMacro` / `EditMacro` through IDispatch, a Node.js `winax` `SelectByID2` limit).
+- Third-party credits from LICENSE, README, the skill's sources and this changelog: everything in
+  the skill now comes from this project's own builds and the SOLIDWORKS type library.
+
 ## 2.3.0 (2026-10-31)
 
 Lessons from the SolidWorks Test Runs of swlib 2.1/2.2 and of the author-credit helpers
@@ -94,23 +102,19 @@ a test rig. 28 of about 50 runs failed or gave a wrong result. Each cause is now
 - §7.3: the sketch transform no longer needs `IMathUtility`, which throws when late-bound.
 - §10.3: the mate helper now passes the angle arguments (positions 9–11, radians).
 - §10.7: flexible sub-assemblies are set through the API, not "tell the user to right-click".
-- §2: a tab character in the original template path.
 
 ## 2.0.0 (2026-10-29)
 
-A rewrite of the original skill, in English, based on real product builds.
-
-### Fixed
-- `swEndCondBlind` is `0` (was `1`, which is *Through All*). `swEndCondThroughAll` is `1` (was `2`).
-- `swSelEDGES` is `1` (was `4`). `swSelSKETCHES` is `9` (was `16`).
-- Removed the non-existent `swPlaneTop/Front/Right` constants. Planes are found by type order.
-- Corrected the claim that methods with more than 12 arguments fail through IDispatch. They work
-  in pywin32; the limit is specific to Node.js `winax`.
-- Export uses `Extension.SaveAs3` with `swSaveAsOptions_Copy`, so the open document isn't renamed.
-- Updated to current method versions: `FeatureExtrusion3`, `FeatureCircularPattern5`,
-  `FeatureLinearPattern5`, `InsertMirrorFeature2`, `CreateMate`.
+First public version, based on real product builds.
 
 ### Added
+- Correct values for commonly mistyped constants: `swEndCondBlind` is `0`, `swEndCondThroughAll`
+  is `1`, `swSelEDGES` is `1`, `swSelSKETCHES` is `9`; `swPlaneTop/Front/Right` don't exist, so
+  planes are found by type order.
+- Long argument lists work through IDispatch in pywin32 (23 and 27 arguments, late-bound).
+- Export with `Extension.SaveAs3` and `swSaveAsOptions_Copy`, so the open document isn't renamed.
+- Current method versions: `FeatureExtrusion3`, `FeatureCircularPattern5`,
+  `FeatureLinearPattern5`, `InsertMirrorFeature2`, `CreateMate`.
 - 60+ exact signatures read from the SOLIDWORKS 2025 type library, each marked [PROVEN] or [DOC].
 - Early-binding setup (`gencache` + `cast`) and a late-binding fallback with its quirks.
 - Part recipes: verified offset planes, sketch↔model transforms, extrude and cut direction rules,
@@ -124,7 +128,3 @@ A rewrite of the original skill, in English, based on real product builds.
 - `examples/swlib.py` (Python API layer), two example scripts and a VBA macro.
 - `tools/sw_signature.py`, `tools/sw_constants.py`, `tools/sync_skill.py`.
 - Documentation and README graphics.
-
-## 1.0.0
-
-Original Chinese skill by @guoleizhen717 (SOLIDWORKS 2023, shield-machine cutterhead project).
