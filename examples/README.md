@@ -40,6 +40,9 @@ Each script prints its checks and ends with `ALL CHECKS PASSED` (exit code 0) or
   `stamp_pdf`) stamped a part, an assembly, a drawing, a STEP and a PDF, and all five checked
   INTACT (2026-10-31). Check SOLIDWORKS files from a second process only with
   your work saved: one such check was followed by a SOLIDWORKS crash (SKILL.md §8).
+- The drawing checks (`check_layout`, `pdf_words`, `box_overlaps`) need no SOLIDWORKS. They caught
+  every planted fault (border, title block, zone overlap, text on text) and passed a real A3
+  drawing PDF without false alarms (2026-11-01).
 - Set `SW_TLB_MAJOR=32` (2024) or `31` (2023) to force an older type library.
 
 ## VBA

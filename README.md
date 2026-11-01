@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="SOLIDWORKS API Skill for Claude Code" width="100%">
+  <img src="assets/banner@2x.png" alt="SOLIDWORKS API Skill for Claude Code" width="100%">
 </p>
 
 <p align="center">
@@ -68,7 +68,7 @@ spring with configurations, a flexible sub-assembly and limit mates), and optics
 
 ## How it works
 
-<p align="center"><img src="assets/how-it-works.svg" alt="You describe the part, Claude with the skill writes a Python script, SOLIDWORKS builds it, and checks feed back to Claude" width="100%"></p>
+<p align="center"><img src="assets/how-it-works@2x.png" alt="You describe the part, Claude with the skill writes a Python script, SOLIDWORKS builds it, and checks feed back to Claude" width="100%"></p>
 
 1. You describe what you want, in plain words, with dimensions in mm.
 2. Claude loads the skill, plans the feature tree and writes a build script using exact API calls.
@@ -171,7 +171,7 @@ Each example prints its checks and exits with code 1 if one fails. Output goes t
 VBA users: see [`examples/vba/CreateFlange.bas`](examples/vba/CreateFlange.bas).
 Details: [examples/README.md](examples/README.md).
 
-<p align="center"><img src="assets/assembly-pattern.svg" alt="Skeleton part in the middle with named datums; parts, fasteners, sub-assemblies and springs mated to it with fixed recipes" width="100%"></p>
+<p align="center"><img src="assets/assembly-pattern@2x.png" alt="Skeleton part in the middle with named datums; parts, fasteners, sub-assemblies and springs mated to it with fixed recipes" width="100%"></p>
 
 ## Developer tools
 
@@ -254,7 +254,7 @@ solidworks-api-skill/
 │   ├── sync_skill.py                ← keeps the two SKILL.md copies identical
 │   └── verify_credit.py             ← checks a signed author credit (INTACT / ALTERED / MISSING)
 ├── docs/                            ← installation, usage, troubleshooting
-├── assets/                          ← README graphics (SVG)
+├── assets/                          ← README graphics (PNG, @2x for sharp screens; SVG sources)
 ├── CHANGELOG.md · CONTRIBUTING.md · LICENSE
 ```
 

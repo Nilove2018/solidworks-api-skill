@@ -13,7 +13,7 @@ description: >
   configuration, mate, limit mate, flexible, assembly, .SLDPRT, .SLDASM, .swp, VBA macro, swconst,
   Toolbox, enclosure, 3D-print part, drawing, SLDDRW, GD&T, tolerance, dimension, vent, existing part,
   test run.
-version: 2.3.2
+version: 2.4.0
 author: Nilove Mandal
 tags: [solidworks, cad, com-api, pywin32, vba, automation, mechanical-design, assembly, 3d-printing]
 ---
@@ -962,6 +962,17 @@ rendering.
   `AddDimension2(x, y, 0)` in sheet metres. Two parallel line edges give a distance; a circle gives a
   diameter. **Never overwrite dimension text** to fake a value (a radius dimension retyped "Ø7.0"
   no longer follows the model). Use a true diameter dimension; add only a prefix or suffix.
+- **Turned and revolved parts: dimension circles in the side view** [PROVEN 2026-11-01]. In a view
+  along the axis, a diameter's leader runs diagonally through every concentric circle and its text
+  lands on them. In the side view the same circular edges are edge-on: `v.SelectEntity(circle_edge,
+  False)` + `AddDimension2(x, y, 0)` gives a horizontal Ø dimension with extension lines, first
+  time. Two edge-on circles at different heights give the **vertical distance** between them
+  (height, ring height, rim thickness), so a part with no straight edges can still be fully
+  dimensioned. Stack the Ø rows above and below the view about 12 mm apart (ISO 129: ≥ 7 mm).
+- **Precision per dimension**: `IDisplayDimension.SetPrecision3(Primary, Dual, PrimaryTol, DualTol)`
+  [4] [PROVEN]. The default prints "250.0". Choose it from the tolerance grade (e.g. integers for
+  large diameters of a moulded part, one decimal for heights with tenths) and use the same rule
+  for the whole sheet.
 - **Tolerances**: `IDimension.SetToleranceType(swTolBILAT | swTolSYMMETRIC | swTolFITWITHTOL)` and
   `IDimensionTolerance.SetValues(min, max)` (metres). `SetValues2` returned False on drawing dimensions.
   Fits: `SetFitValues("H7", "")` or `("", "g6")`. Text: `IDisplayDimension.SetText(swDimensionTextAll, ...)`.
@@ -990,7 +1001,13 @@ notes past the border, a BOM off the sheet and then over the title block, and te
 Plan the layout instead:
 1. **Lay out the sheet before writing code.** Use fixed zones: a view grid, a notes zone, a BOM zone
    above the title block, and a 10 mm margin round each view. Choose view scales so that each view
-   *plus its dimensions* fits its zone (an end view's height includes the jaws).
+   *plus its dimensions* fits its zone (an end view's height includes the jaws). Write the zones
+   as rectangles and run `swlib.check_layout(zones, sheet, margin, keepouts)` **before the first
+   view is created**; it raises on anything over the border, on the title block or on another
+   zone. A3 ISO (`a3 - iso.slddrt`), measured on screen, approximate: inner border ≈ 0.02 m from
+   each edge, title block ≈ x > 0.226 m, y < 0.06 m (taller at the right); keep notes at
+   x ≥ 0.03 m. Measure your own template once. Skipping this put notes on the border, a view
+   label on the title block and a dimension above the top border, and cost two reruns.
 2. **ISO 129 spacing**: the first dimension line ≥ 10 mm from the outline, then ≥ 7 mm between parallel
    dimension lines. Stagger stacked texts, and put shorter dimensions inside longer ones.
 3. **GD&T frames, datum symbols and finish symbols go outside the view**, never over engraving,
@@ -998,9 +1015,13 @@ Plan the layout instead:
    hidden (dashed) line. Use a section or end view.
 4. **Small features get a detail view** (jaw tips, a relief groove, a graduation pattern) instead of
    crowding a 1:1 view.
-5. **Check every PDF for collisions automatically**: read text boxes and line boxes with `pymupdf`
-   (`page.get_text("dict")`, `page.get_drawings()`). Flag text on text, and text crossing a view
-   outline. Move the offender and re-run only that sheet.
+5. **Check every PDF automatically, not from a screenshot**: read the words with
+   `swlib.pdf_words(pdf)` (`page.get_text("words")`) and line boxes with `page.get_drawings()`.
+   (a) Every dimension value you expect is present in full. (b) `swlib.box_overlaps(words)` is
+   empty (text on text), and no text crosses the border or a view outline. Move the offender and
+   re-run only that sheet. A screenshot showed "Ø48" where the PDF had a complete "Ø168" (a leader
+   hid a digit), and the reverse happens too, so use the PDF, then one screenshot. Never tell the
+   user "layout checked" from a screenshot alone.
 6. **GD&T checklist** the drawing script must pass:
    - Ⓔ (envelope) on every feature-of-size fit when the sheet declares ISO 8015, or a note "ISO 14405 Ⓔ
      applies to all fits".
@@ -1390,6 +1411,13 @@ Find the row for the symptom and run its first check before changing any code.
 |---|---|---|---|
 | A method returns None or has no effect from a script | a Test Run with one OK line per step (create, set, save, reopen, read) for each candidate method | the method needs an add-in context (`IGet3rdPartyStorage`), the other binding mode (3.0), or an active document/selection | use the method the Test Run proved; write the result into the skill |
 
+**Drawings**
+
+| Symptom | First check | Likely cause | Fix |
+|---|---|---|---|
+| A dimension looks wrong or clipped in the screenshot ("Ø48" for Ø168) | `swlib.pdf_words(pdf)`: is the full value in the PDF? | a leader line crosses the text in the viewport; the value is right | move the text clear of leaders (side-view Ø dimensions, 8.2); don't change the precision |
+| The user sees overlapping text after you said "checked" | planned rectangles vs the real text positions (a note's position is its top-left anchor) | no zone plan, or a note anchored inside the border zone | zones + `check_layout` before building (8.3), then `box_overlaps` on the PDF and one screenshot |
+
 ---
 
 ## 12. Verification checklist (run after every build)
@@ -1400,6 +1428,7 @@ Find the row for the symptom and run its first check before changing any code.
 | Sketches fully defined | `sketch_feat.GetSpecificFeature2().GetConstrainedStatus() == 3` |
 | Each feature did something | volume before vs after (`ext.CreateMassProperty().Volume`); body count stays 1 |
 | Geometry matches the plan | exact extents with `GetExtremePoint` in 6 directions (9); `GetBodyBox` / `GetPartBox` only for flat-faced parts; volume vs hand calculation (e.g. frustum formula, or wire length × πd²/4 for a spring). Our FOV and shroud parts matched to 0.1 mm³ |
+| Plan vs built, in the same run | recompute every planned number from the built model (diameters, heights, wall) and print **volume × density next to the planned mass**; flag any difference > 10 % at once. A planned floor Ø170 came out Ø168 and a planned 90–110 g came out 146 g, found only later. Every feature in the approved plan is built, or you tell the user in the same message and strike it from the plan **and the drawing notes**: a note for a fillet or draft the model doesn't have misleads the manufacturer |
 | Parametric | change variables (`set_global`, 7.8), rebuild, What's Wrong = 0, restore |
 | Every configuration, just before saving | for each: activate, body count, volume, What's Wrong = 0, suppression table (7.11). Then activate the main configuration |
 | Mates | `mate_errors()` empty after the rebuild (10.3) |
@@ -1410,7 +1439,7 @@ Find the row for the symptom and run its first check before changing any code.
 | Exports exist | list the output folder, report the file sizes |
 | Changed an existing part | **skin diff** against the untouched original, every build: rays from outside over the changed area + 6 mm. "Raised" points are added material poking out (slivers); "cut outside" points are stray cuts. Both must be 0. Volume returns exactly to the original when a group is removed |
 | Openings that must be light-tight or blocked | sight-line test on the built B-rep: thousands of random rays at each opening (±85° across, ±60° along). A leak is a ray that crosses the inner plane **inside** the opening's footprint; rays that miss the part are not leaks. Open-channel test: rays along each slot leg travel its full length without a hit. Prove it in 2D first (a section trace), then on the B-rep |
-| Drawings | dry run (every edge found), PDF collision check and the GD&T checklist (8.3); re-run only the failing sheet |
+| Drawings | `check_layout` on the planned zones before the first view, dry run (every edge found), then on the PDF: every expected value in `pdf_words`, `box_overlaps` empty, and the GD&T checklist (8.3); re-run only the failing sheet |
 
 The interference check found real design errors in our builds: a switch cap socket that didn't
 clear the plunger, USB-C openings sized to the bare connector instead of the receptacle front, a
@@ -1535,12 +1564,25 @@ End Sub
   down, cosmetic face up as a top surface (ironing), tree supports on the build plate only, 0.16 mm
   layers, 4 walls, ASA on an enclosed printer rather than PLA.
 
+### 14.4 Thin-walled revolved parts (dishes, cups, moulded vessels) [PROVEN]
+
+- Build it as **one closed profile that already includes the wall thickness**, a centreline and one
+  revolve, not a solid plus shell: nothing can fail in a shell, and the wall stays parametric in one
+  list of points. A dish with foot ring, sloped wall and rim built first time, 0 What's Wrong, exact
+  extents.
+- **A uniform wall on a sloped (conical) face**: offset the sloped line along its **normal** by t,
+  then intersect with the floor and rim lines. A vertical offset of t gives a true wall of only
+  t·cos(slope). On a 37° wall a 3 mm normal offset is a 3.75 mm vertical offset (t / cos 37°). Do it
+  by hand calculation first, then sketch it; the mass then matched a hand estimate within 5 %.
+
 ---
 
 ## 15. Working with the user
 
 - Make a short plan and confirm assumptions (sizes read off photos, unknown coil counts, etc.)
-  before building. Mark guesses as guesses in the report.
+  before building. Mark guesses as guesses in the report. When a number looks like a typo
+  ("eating diameter 25 mm" on a dinner plate), ask once and put the likely reading (250 mm) as
+  the recommended option, then say the interpretation back.
 - **Before modelling**, do the following once and get it right: a research summary, the parameters
   file, the fit and clearance table, and the computed standard values (rule 1.17).
 - Confirm the style with a quick render before any CAD: recessed, flush or chamfered, the layout,
@@ -1568,6 +1610,7 @@ End Sub
 | **swlib.py**: early-bound API layer (model-coordinate sketching on any plane, verified planes, axes, extrude/cut between coordinates, revolve, shell, fillet/chamfer by geometry, outline text, equations, colours, export, `Asm` with placement + mates) | `examples/swlib.py` |
 | swlib 2.1 additions from the torsion-spring build: `NOTHING`, `dispatch_array`, `com_put`, `newest`, plane flip retry, `Part.feature`, `extent`/`extents`, `helix` + `helix_hand`, `sweep_circular`, `combine_add`, `set_global`, configurations (`add_configuration`, `suppress_in`, `suppression`), per-configuration `color`, material read-back, `Asm.add(config=)`, angle-limit `mate`, `mates`/`mate_errors`, `make_flexible`, two-pass `interference`, `SwApp.close_created`, startup wait. All ran early-bound on 2025 SP1.2 (2026-10-30) except the startup wait | `examples/swlib.py` |
 | swlib 2.2 additions from the caliper and vent builds: `Asm.mate(verify=)`, save by path (`close_other`), `plane_3pts`, `name_entity` / `entity`, `folder`, `delete_group`, `ray_hits`, `backup`, `log`. All ran early-bound on 2025 SP1.2 (SolidWorks Test Run, 2026-10-31) | `examples/swlib.py` |
+| Drawing checks (no SOLIDWORKS needed): `check_layout` (zones inside the border, off the title block, no overlaps; raises), `pdf_words` (every word and box of a PDF page), `box_overlaps` (text on text; trims the line gap PDF word boxes include, so a multi-line note isn't flagged). Caught every planted fault and passed a real A3 drawing PDF cleanly (2026-11-01) | `examples/swlib.py` |
 | Hidden and signed metadata (an author credit): summary info + custom property + hidden attribute + NTFS stream + HMAC signature + STEP/PDF author (`stamp_credit`, `read_credit`, `stamp_file_ads`, `stamp_step`, `stamp_pdf`; set `SwApp.credit` to stamp on every save). Part, assembly, drawing, STEP and PDF checked INTACT (2026-10-31; SOLIDWORKS files read back in the stamping process). Check files with `tools/verify_credit.py` (SOLIDWORKS files only with `--sldworks`, see 8) | `examples/swlib.py`, `tools/verify_credit.py` |
 | SolidWorks Test Run template (rule 1.14) | `examples/00_test_run_template.py` |
 | Parametric plate: sketches, cuts, fillet and chamfer by geometry, global variables, checks, STEP/STL export | `examples/01_parametric_plate.py` |

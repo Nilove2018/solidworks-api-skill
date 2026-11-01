@@ -1,6 +1,6 @@
 {
   "name": "solidworks-api",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "description": "Teaches Claude to automate SOLIDWORKS correctly: exact API signatures, verified swconst values, parametric parts, skeleton-based assemblies with mates, verification and export.",
   "author": {
     "name": "Nilove Mandal",

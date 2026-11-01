@@ -32,6 +32,10 @@ Skill 2.3 adds the author-credit helpers (stamp_credit, read_credit, stamp_file_
 stamp_pdf; set SwApp.credit to stamp every save). A part, an assembly, a drawing, a STEP and a
 PDF checked INTACT (2026-10-31). Verify in the process that stamped: a second
 process reading the files was followed by a SOLIDWORKS crash (cause not proven).
+
+Skill 2.4 adds drawing checks that need no SOLIDWORKS: check_layout (planned zones inside the
+border and off the title block), pdf_words and box_overlaps (text on text in the saved PDF).
+Tested on a synthetic overlap and on a real A3 drawing PDF (2026-11-01).
 """
 from __future__ import annotations
 
@@ -188,6 +192,58 @@ def backup(path, reason="backup"):
 def log(msg):
     """Timestamped progress line, flushed at once (run scripts with python -u, never | tail)."""
     print(f"[{time.strftime('%H:%M:%S')}] {msg}", flush=True)
+
+
+# --------------------------------------------------------------------------- drawing checks
+def check_layout(items, sheet=(0.42, 0.297), margin=0.02, keepouts=()):
+    """Raise SwError unless every planned item lies inside the sheet's inner border and outside
+    every keep-out. items: {name: (x0, y0, x1, y1)} in sheet metres (y up, origin bottom-left);
+    keepouts: [(name, (x0, y0, x1, y1))], e.g. the title block. Call it with the planned zones
+    BEFORE the first view is created, and again with the real text boxes after placing."""
+    bad = []
+    eps = 1e-9                                      # an item exactly on the inner border is inside
+    for name, (x0, y0, x1, y1) in items.items():
+        if (x0 < margin - eps or y0 < margin - eps or x1 > sheet[0] - margin + eps
+                or y1 > sheet[1] - margin + eps):
+            bad.append(f"{name} crosses the border")
+        for kname, (kx0, ky0, kx1, ky1) in keepouts:
+            if x0 < kx1 and kx0 < x1 and y0 < ky1 and ky0 < y1:
+                bad.append(f"{name} overlaps {kname}")
+    names = list(items)
+    for i, a in enumerate(names):
+        for b in names[i + 1:]:
+            (ax0, ay0, ax1, ay1), (bx0, by0, bx1, by1) = items[a], items[b]
+            if ax0 < bx1 and bx0 < ax1 and ay0 < by1 and by0 < ay1:
+                bad.append(f"{a} overlaps {b}")
+    if bad:
+        raise SwError("layout: " + "; ".join(bad))
+
+
+def pdf_words(pdf_path, page=0):
+    """[(text, (x0, y0, x1, y1))] of every word on a PDF page (points, y down), with pymupdf.
+    Check that each expected dimension value is present in full: a screenshot can show a digit
+    hidden by a leader line while the PDF text is complete, and the reverse."""
+    import pymupdf
+    with pymupdf.open(pdf_path) as d:
+        return [(w[4], tuple(w[:4])) for w in d[page].get_text("words")]
+
+
+def box_overlaps(words, shrink=0.2):
+    """Pairs of words whose boxes intersect (text on text), from pdf_words(). PDF word boxes
+    include the font's line gap, so the lines of one multi-line note overlap by ~30 % of the box
+    height; each box is trimmed by `shrink` x its height at top and bottom before comparing."""
+    def core(b):
+        x0, y0, x1, y1 = b
+        h = (y1 - y0) * shrink
+        return x0, y0 + h, x1, y1 - h
+    out = []
+    for i, (ta, a) in enumerate(words):
+        ax0, ay0, ax1, ay1 = core(a)
+        for tb, b in words[i + 1:]:
+            bx0, by0, bx1, by1 = core(b)
+            if ax0 < bx1 and bx0 < ax1 and ay0 < by1 and by0 < ay1:
+                out.append((ta, tb))
+    return out
 
 
 # --------------------------------------------------------------------------- author credit

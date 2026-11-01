@@ -1,35 +1,301 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-label="SOLIDWORKS API Skill for Claude Code">
-  <defs><marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#fbbf24"/></marker><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="#0d2741"/></linearGradient><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0 L0 0 0 24" fill="none" stroke="#1d3a57" stroke-width="0.6"/></pattern><marker id="flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="flowg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker></defs>
-  <rect width="1280" height="360" rx="18" fill="url(#bg)"/>
-  <rect width="1280" height="360" rx="18" fill="url(#grid)" opacity="0.7"/>
-  <text x="64" y="92" fill="#7dd3fc" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="16" letter-spacing="3">CLAUDE CODE SKILL  ·  PLUGIN</text>
-  <text x="62" y="152" fill="#f8fafc" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="54" font-weight="700">SOLIDWORKS API Skill</text>
-  <text x="64" y="196" fill="#cbd5e1" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="21">Parametric parts, sketches and mated assemblies, built by Claude</text>
-  <text x="64" y="224" fill="#94a3b8" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17">Python (pywin32) · VBA macros · SOLIDWORKS 2023 – 2025</text>
-  <rect x="64" y="246" width="188" height="34" rx="17" fill="#0f2f4d" stroke="#38bdf8" stroke-width="1"/><text x="158" y="268" fill="#bae6fd" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle">Exact API signatures</text><rect x="264.0" y="246" width="171" height="34" rx="17" fill="#0f2f4d" stroke="#38bdf8" stroke-width="1"/><text x="349" y="268" fill="#bae6fd" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle">Verified constants</text><rect x="446.79999999999995" y="246" width="154" height="34" rx="17" fill="#0f2f4d" stroke="#38bdf8" stroke-width="1"/><text x="524" y="268" fill="#bae6fd" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle">Mated assemblies</text><rect x="612.4" y="246" width="145" height="34" rx="17" fill="#0f2f4d" stroke="#38bdf8" stroke-width="1"/><text x="685" y="268" fill="#bae6fd" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle">Built-in checks</text>
-  <text x="64" y="322" fill="#64748b" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="13">FeatureExtrusion3(True, False, False, swEndCondBlind, 0, 0.006, 0, ...)  # 23 args, metres</text>
-  <g>
-    <polygon points="882.4,165.0 1062.5,269.0 1062.5,253.4 882.4,149.4" fill="#0e3a5c" stroke="#7dd3fc" stroke-width="1.6" stroke-linejoin="round"/>
-    <polygon points="1175.1,204.0 1062.5,269.0 1062.5,253.4 1175.1,188.4" fill="#0b2f4b" stroke="#7dd3fc" stroke-width="1.6" stroke-linejoin="round"/>
-    <polygon points="995.0,84.4 1175.1,188.4 1062.5,253.4 882.4,149.4" fill="#134b74" stroke="#7dd3fc" stroke-width="1.6" stroke-linejoin="round"/>
-    <ellipse cx="995.0" cy="105.2" rx="8.8" ry="5.1" fill="#061a2b" stroke="#7dd3fc" stroke-width="1.6" stroke-linejoin="round"/>
-    <ellipse cx="918.4" cy="149.4" rx="8.8" ry="5.1" fill="#061a2b" stroke="#7dd3fc" stroke-width="1.6" stroke-linejoin="round"/>
-    <ellipse cx="1139.1" cy="188.4" rx="8.8" ry="5.1" fill="#061a2b" stroke="#7dd3fc" stroke-width="1.6" stroke-linejoin="round"/>
-    <ellipse cx="1062.5" cy="232.6" rx="8.8" ry="5.1" fill="#061a2b" stroke="#7dd3fc" stroke-width="1.6" stroke-linejoin="round"/>
-    <path d="M1003.3,168.9 L1003.3,148.1 L1054.2,148.1 L1054.2,168.9 A25.5,14.7 0 0 1 1003.3,168.9 Z" fill="#0f4266" stroke="#7dd3fc" stroke-width="1.6"/>
-    <ellipse cx="1028.8" cy="148.1" rx="25.5" ry="14.7" fill="#1b5e8f" stroke="#7dd3fc" stroke-width="1.6"/>
-    <ellipse cx="1028.8" cy="148.1" rx="12.7" ry="7.4" fill="#061a2b" stroke="#7dd3fc" stroke-width="1.6"/>
-    <line x1="882.4" y1="165.0" x2="857.6" y2="179.3" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3 3"/>
-    <line x1="1062.5" y1="269.0" x2="1037.8" y2="283.3" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3 3"/>
-    <line x1="862.2" y1="176.7" x2="1042.3" y2="280.7" stroke="#fbbf24" stroke-width="1.4" marker-start="url(#arr)" marker-end="url(#arr)"/>
-    <text x="952.2" y="250.7" fill="#fbbf24" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="15" text-anchor="middle" transform="rotate(30 952.2 250.7)">80.00</text>
-    <line x1="1195.4" y1="215.7" x2="1082.8" y2="280.7" stroke="#fbbf24" stroke-width="1.4" marker-start="url(#arr)" marker-end="url(#arr)"/>
-    <text x="1157.1" y="262.2" fill="#fbbf24" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="15" text-anchor="middle" transform="rotate(-30 1157.1 262.2)">50.00</text>
-    <line x1="845" y1="250" x2="874.4" y2="267.0" stroke="#f87171" stroke-width="2.4"/>
-    <text x="884.8" y="278.0" fill="#f87171" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">X</text>
-    <line x1="845" y1="250" x2="815.6" y2="267.0" stroke="#4ade80" stroke-width="2.4"/>
-    <text x="805.2" y="278.0" fill="#4ade80" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Y</text>
-    <line x1="845" y1="250" x2="845.0" y2="216.0" stroke="#60a5fa" stroke-width="2.4"/>
-    <text x="845.0" y="209.0" fill="#60a5fa" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Z</text>
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="b_bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060a14"/>
+      <stop offset="45%" stop-color="#0a1324"/>
+      <stop offset="100%" stop-color="#0c1d36"/>
+    </linearGradient>
+    <radialGradient id="b_glowCyan" cx="80%" cy="50%" r="48%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.28"/>
+      <stop offset="50%" stop-color="#0284c7" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="b_glowRose" cx="15%" cy="20%" r="35%">
+      <stop offset="0%" stop-color="#e11d48" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#e11d48" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Metal / CAD Surface Gradients -->
+    <linearGradient id="b_topFaceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3e66"/>
+      <stop offset="50%" stop-color="#163254"/>
+      <stop offset="100%" stop-color="#102540"/>
+    </linearGradient>
+    <linearGradient id="b_frontFaceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#102846"/>
+      <stop offset="100%" stop-color="#08182b"/>
+    </linearGradient>
+    <linearGradient id="b_rightFaceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0b1d33"/>
+      <stop offset="100%" stop-color="#050f1c"/>
+    </linearGradient>
+    <linearGradient id="b_bossTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#285687"/>
+      <stop offset="100%" stop-color="#1a3b61"/>
+    </linearGradient>
+    <linearGradient id="b_bossCylGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d243f"/>
+      <stop offset="50%" stop-color="#204875"/>
+      <stop offset="100%" stop-color="#0b1b30"/>
+    </linearGradient>
+
+    <!-- Glass Terminal Gradient -->
+    <linearGradient id="b_termGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#08101e" stop-opacity="0.94"/>
+      <stop offset="100%" stop-color="#040810" stop-opacity="0.98"/>
+    </linearGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="b_shadowPlate" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+    <filter id="b_shadowTerm" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+    <filter id="b_glowBadge" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#38bdf8" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- Blueprint Grid -->
+    <pattern id="b_gridPattern" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#1e3a5f" stroke-width="0.5" stroke-opacity="0.4"/>
+    </pattern>
+    <pattern id="b_gridDot" width="96" height="96" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#38bdf8" fill-opacity="0.25"/>
+    </pattern>
+
+    <!-- Markers -->
+    <marker id="b_dimArr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="b_axisR" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 2 L 7 5 L 0 8 z" fill="#ef4444"/>
+    </marker>
+    <marker id="b_axisG" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 2 L 7 5 L 0 8 z" fill="#22c55e"/>
+    </marker>
+    <marker id="b_axisB" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 2 L 7 5 L 0 8 z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+
+  <style>
+    .mono { font-family: "Cascadia Code", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .title-font { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 700; letter-spacing: 0.8px; fill: #ffffff; }
+    .code-comment { fill: #64748b; }
+    .code-kw { fill: #f43f5e; font-weight: 600; }
+    .code-fn { fill: #38bdf8; font-weight: 600; }
+    .code-arg { fill: #94a3b8; }
+    .code-val { fill: #34d399; }
+    .code-num { fill: #fbbf24; }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect width="1280" height="360" rx="16" fill="url(#b_bgGrad)"/>
+  <rect width="1280" height="360" rx="16" fill="url(#b_gridPattern)"/>
+  <rect width="1280" height="360" rx="16" fill="url(#b_gridDot)"/>
+  <rect width="1280" height="360" rx="16" fill="url(#b_glowCyan)"/>
+  <rect width="1280" height="360" rx="16" fill="url(#b_glowRose)"/>
+  <rect width="1278" height="358" x="1" y="1" rx="15" fill="none" stroke="#1e3a5f" stroke-width="1.2" stroke-opacity="0.8"/>
+
+  <!-- ==================== LEFT COLUMN: HEADLINE & BADGES ==================== -->
+  <g transform="translate(56, 0)">
+    <!-- Header Badge -->
+    <g transform="translate(0, 30)">
+      <rect width="270" height="26" rx="13" fill="#082f49" stroke="#0284c7" stroke-width="1.2" filter="url(#b_glowBadge)"/>
+      <circle cx="15" cy="13" r="4" fill="#22c55e">
+        <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="26" y="17.5" class="mono" font-size="11.5" font-weight="700" fill="#38bdf8" letter-spacing="1.2">CLAUDE CODE SKILL · PLUGIN</text>
+      
+      <!-- Version & SW pill -->
+      <rect x="282" y="0" width="180" height="26" rx="13" fill="#1e1b4b" stroke="#6366f1" stroke-width="1"/>
+      <text x="372" y="17.5" class="sans" font-size="11.5" font-weight="600" fill="#c7d2fe" text-anchor="middle">SOLIDWORKS 2023–2025</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="96" class="title-font" font-size="42">SOLIDWORKS API Skill</text>
+    
+    <!-- Subtitles -->
+    <text x="0" y="124" class="sans" font-size="16.5" font-weight="600" fill="#38bdf8">Autonomous CAD Engineering for AI Coding Agents</text>
+    <text x="0" y="145" class="sans" font-size="13" fill="#94a3b8">Parametric parts, sketches &amp; mated assemblies · Built correctly the first time</text>
+
+    <!-- Feature Chips (4 Pillars) -->
+    <g transform="translate(0, 162)">
+      <!-- Pill 1: Signatures -->
+      <g transform="translate(0, 0)">
+        <rect width="166" height="26" rx="13" fill="#0c233c" stroke="#0284c7" stroke-width="1"/>
+        <circle cx="14" cy="13" r="3" fill="#38bdf8"/>
+        <text x="24" y="17" class="sans" font-size="11.5" font-weight="600" fill="#bae6fd">Exact API Signatures</text>
+      </g>
+      <!-- Pill 2: Enums -->
+      <g transform="translate(174, 0)">
+        <rect width="158" height="26" rx="13" fill="#241b06" stroke="#b45309" stroke-width="1"/>
+        <circle cx="14" cy="13" r="3" fill="#fbbf24"/>
+        <text x="24" y="17" class="sans" font-size="11.5" font-weight="600" fill="#fef3c7">Verified swconst</text>
+      </g>
+      <!-- Pill 3: Assemblies -->
+      <g transform="translate(340, 0)">
+        <rect width="156" height="26" rx="13" fill="#1e1338" stroke="#7e22ce" stroke-width="1"/>
+        <circle cx="14" cy="13" r="3" fill="#c084fc"/>
+        <text x="24" y="17" class="sans" font-size="11.5" font-weight="600" fill="#f3e8ff">Skeleton Mating</text>
+      </g>
+      <!-- Pill 4: Checks -->
+      <g transform="translate(504, 0)">
+        <rect width="154" height="26" rx="13" fill="#062419" stroke="#059669" stroke-width="1"/>
+        <circle cx="14" cy="13" r="3" fill="#34d399"/>
+        <text x="24" y="17" class="sans" font-size="11.5" font-weight="600" fill="#d1fae5">Built-in Checks</text>
+      </g>
+    </g>
+
+    <!-- Code Card Inset -->
+    <g transform="translate(0, 202)" filter="url(#b_shadowTerm)">
+      <rect width="660" height="122" rx="10" fill="url(#b_termGrad)" stroke="#1e3a5f" stroke-width="1.2"/>
+      
+      <!-- Terminal Header -->
+      <rect width="660" height="26" rx="10" fill="#0c192e"/>
+      <path d="M 0 16 L 0 26 L 660 26 L 660 16 z" fill="#0c192e"/>
+      <circle cx="14" cy="13" r="4" fill="#ef4444" opacity="0.8"/>
+      <circle cx="27" cy="13" r="4" fill="#f59e0b" opacity="0.8"/>
+      <circle cx="40" cy="13" r="4" fill="#10b981" opacity="0.8"/>
+      <text x="56" y="17" class="mono" font-size="11" fill="#64748b">swlib.py · early-bound COM · type-library signatures (no guessing)</text>
+      <text x="644" y="17" class="mono" font-size="10.5" fill="#0ea5e9" text-anchor="end">MM = 0.001 m</text>
+
+      <!-- Code lines -->
+      <g transform="translate(16, 44)">
+        <text x="0" y="0" class="mono" font-size="11">
+          <tspan class="code-comment"># Exact 23 arguments; native metres; names feature; checks errors</tspan>
+        </text>
+        <text x="0" y="18" class="mono" font-size="11">
+          <tspan class="code-arg">feat = feat_mgr.</tspan><tspan class="code-fn">FeatureExtrusion3</tspan><tspan class="code-arg">(</tspan><tspan class="code-kw">Sd</tspan><tspan class="code-arg">=</tspan><tspan class="code-kw">True</tspan><tspan class="code-arg">, </tspan><tspan class="code-kw">Flip</tspan><tspan class="code-arg">=</tspan><tspan class="code-kw">False</tspan><tspan class="code-arg">, </tspan><tspan class="code-kw">Dir</tspan><tspan class="code-arg">=</tspan><tspan class="code-kw">False</tspan><tspan class="code-arg">, </tspan><tspan class="code-kw">T1</tspan><tspan class="code-arg">=</tspan><tspan class="code-val">swEndCondBlind</tspan><tspan class="code-arg">, </tspan><tspan class="code-kw">T2</tspan><tspan class="code-arg">=</tspan><tspan class="code-num">0</tspan><tspan class="code-arg">, </tspan><tspan class="code-kw">D1</tspan><tspan class="code-arg">=</tspan><tspan class="code-num">6.0*MM</tspan><tspan class="code-arg">, ...)</tspan>
+        </text>
+        <text x="0" y="38" class="mono" font-size="11">
+          <tspan class="code-kw">assert</tspan> <tspan class="code-fn">abs</tspan><tspan class="code-arg">(part.</tspan><tspan class="code-fn">volume</tspan><tspan class="code-arg">() - target_vol) &lt; </tspan><tspan class="code-num">1e-8</tspan><tspan class="code-arg">, </tspan><tspan class="code-val">"Volume mismatch"</tspan>
+          <tspan fill="#22c55e" font-weight="700">  [PASS: 0 Rebuild Errors]</tspan>
+        </text>
+        <text x="0" y="56" class="mono" font-size="10.5" fill="#38bdf8">
+          <tspan fill="#64748b">Verified checks: </tspan>Volume ±0.01% · Bounding Box 80×50×6 mm · 0 Interference
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== RIGHT COLUMN: 3D CAD MASTERPIECE ==================== -->
+  <g transform="translate(755, 18)">
+    <!-- CAD Viewport Frame -->
+    <rect x="0" y="10" width="480" height="305" rx="14" fill="#081324" fill-opacity="0.65" stroke="#1e3a5f" stroke-width="1.2" stroke-dasharray="8 6"/>
+
+    <!-- Viewport Coordinates & Status Bar -->
+    <text x="16" y="32" class="mono" font-size="10" fill="#38bdf8" letter-spacing="1">ISOMETRIC VIEW [PART1.SLDPRT]</text>
+    <rect x="350" y="20" width="116" height="18" rx="9" fill="#062e1e" stroke="#059669" stroke-width="0.8"/>
+    <circle cx="360" cy="29" r="3" fill="#10b981"/>
+    <text x="414" y="33" class="sans" font-size="9.5" font-weight="700" fill="#a7f3d0" text-anchor="middle">FULLY DEFINED</text>
+
+    <!-- Isometric Datum Planes -->
+    <!-- Front Plane [XY] -->
+    <polygon points="120,40 370,105 370,250 120,185" fill="#0284c7" fill-opacity="0.04" stroke="#0284c7" stroke-width="0.8" stroke-dasharray="4 4"/>
+    <text x="126" y="58" class="mono" font-size="9" fill="#38bdf8" opacity="0.85">[Front Plane XY]</text>
+
+    <!-- Top Plane [XZ] -->
+    <polygon points="40,165 290,100 440,185 190,250" fill="#f59e0b" fill-opacity="0.03" stroke="#f59e0b" stroke-width="0.8" stroke-dasharray="4 4"/>
+    <text x="360" y="132" class="mono" font-size="9" fill="#fbbf24" opacity="0.85">[Top Plane XZ]</text>
+
+    <!-- 3D Solid Model Assembly -->
+    <g filter="url(#b_shadowPlate)" transform="translate(0, -10)">
+      <!-- Base Plate: Skirt Faces -->
+      <polygon points="90,162 250,254 250,274 90,182" fill="url(#b_frontFaceGrad)" stroke="#38bdf8" stroke-width="1.2" stroke-linejoin="round"/>
+      <polygon points="250,254 390,173 390,153 250,234" fill="url(#b_rightFaceGrad)" stroke="#38bdf8" stroke-width="1.2" stroke-linejoin="round"/>
+      
+      <!-- Top Face of Base Plate -->
+      <polygon points="230,81 390,173 250,254 90,162" fill="url(#b_topFaceGrad)" stroke="#7dd3fc" stroke-width="1.5" stroke-linejoin="round"/>
+
+      <!-- Specular Highlight Lines -->
+      <polyline points="90,162 250,254 390,173" fill="none" stroke="#bae6fd" stroke-width="0.8" opacity="0.6"/>
+
+      <!-- 4 Corner Counterbored Mounting Holes (M5) -->
+      <g transform="translate(230, 115)">
+        <ellipse cx="0" cy="0" rx="14" ry="8" fill="#040a14" stroke="#38bdf8" stroke-width="1.2"/>
+        <ellipse cx="0" cy="0" rx="8" ry="4.6" fill="#02050a" stroke="#0284c7" stroke-width="1"/>
+        <ellipse cx="0" cy="3" rx="8" ry="4.6" fill="none" stroke="#1e3a5f" stroke-width="0.8"/>
+      </g>
+      <g transform="translate(140, 167)">
+        <ellipse cx="0" cy="0" rx="14" ry="8" fill="#040a14" stroke="#38bdf8" stroke-width="1.2"/>
+        <ellipse cx="0" cy="0" rx="8" ry="4.6" fill="#02050a" stroke="#0284c7" stroke-width="1"/>
+        <ellipse cx="0" cy="3" rx="8" ry="4.6" fill="none" stroke="#1e3a5f" stroke-width="0.8"/>
+      </g>
+      <g transform="translate(340, 177)">
+        <ellipse cx="0" cy="0" rx="14" ry="8" fill="#040a14" stroke="#38bdf8" stroke-width="1.2"/>
+        <ellipse cx="0" cy="0" rx="8" ry="4.6" fill="#02050a" stroke="#0284c7" stroke-width="1"/>
+        <ellipse cx="0" cy="3" rx="8" ry="4.6" fill="none" stroke="#1e3a5f" stroke-width="0.8"/>
+      </g>
+      <g transform="translate(250, 229)">
+        <ellipse cx="0" cy="0" rx="14" ry="8" fill="#040a14" stroke="#38bdf8" stroke-width="1.2"/>
+        <ellipse cx="0" cy="0" rx="8" ry="4.6" fill="#02050a" stroke="#0284c7" stroke-width="1"/>
+        <ellipse cx="0" cy="3" rx="8" ry="4.6" fill="none" stroke="#1e3a5f" stroke-width="0.8"/>
+      </g>
+
+      <!-- Center Boss Cylinder -->
+      <g transform="translate(240, 168)">
+        <path d="M -34,0 L -34,-24 A 34 19.6 0 0 1 34,-24 L 34,0 A 34 19.6 0 0 1 -34,0 Z" fill="url(#b_bossCylGrad)" stroke="#38bdf8" stroke-width="1.2"/>
+        <ellipse cx="0" cy="-24" rx="34" ry="19.6" fill="url(#b_bossTopGrad)" stroke="#7dd3fc" stroke-width="1.5"/>
+        <ellipse cx="0" cy="-24" rx="16" ry="9.2" fill="#030812" stroke="#38bdf8" stroke-width="1.2"/>
+        <path d="M -16,-24 A 16 9.2 0 0 0 16,-24 L 16,-14 A 16 9.2 0 0 1 -16,-14 Z" fill="#010408" opacity="0.8"/>
+      </g>
+    </g>
+
+    <!-- CAD Technical Dimension Callouts -->
+    <!-- Dimension 80.00 mm -->
+    <g stroke="#f59e0b" stroke-width="1.2">
+      <line x1="90" y1="172" x2="65" y2="186" stroke-dasharray="3 3"/>
+      <line x1="250" y1="264" x2="225" y2="278" stroke-dasharray="3 3"/>
+      <line x1="72" y1="182" x2="232" y2="274" marker-start="url(#b_dimArr)" marker-end="url(#b_dimArr)"/>
+    </g>
+    <rect x="128" y="222" width="60" height="18" rx="4" fill="#081324" stroke="#f59e0b" stroke-width="0.8"/>
+    <text x="158" y="235" class="mono" font-size="11" font-weight="700" fill="#fbbf24" text-anchor="middle">80.00</text>
+
+    <!-- Dimension 50.00 mm -->
+    <g stroke="#f59e0b" stroke-width="1.2">
+      <line x1="250" y1="264" x2="275" y2="278" stroke-dasharray="3 3"/>
+      <line x1="390" y1="183" x2="415" y2="197" stroke-dasharray="3 3"/>
+      <line x1="268" y1="274" x2="408" y2="193" marker-start="url(#b_dimArr)" marker-end="url(#b_dimArr)"/>
+    </g>
+    <rect x="320" y="230" width="60" height="18" rx="4" fill="#081324" stroke="#f59e0b" stroke-width="0.8"/>
+    <text x="350" y="243" class="mono" font-size="11" font-weight="700" fill="#fbbf24" text-anchor="middle">50.00</text>
+
+    <!-- Dimension Thickness: 6.00 mm -->
+    <line x1="82" y1="152" x2="82" y2="172" stroke="#f59e0b" stroke-width="1.1" marker-start="url(#b_dimArr)" marker-end="url(#b_dimArr)"/>
+    <text x="76" y="166" class="mono" font-size="10" font-weight="700" fill="#fbbf24" text-anchor="end">6.00</text>
+
+    <!-- Leader Callout: Boss Ø16 -->
+    <polyline points="274,136 305,108 365,108" fill="none" stroke="#38bdf8" stroke-width="1.2"/>
+    <circle cx="274" cy="136" r="2.5" fill="#38bdf8"/>
+    <text x="370" y="112" class="mono" font-size="10.5" font-weight="600" fill="#bae6fd">Ø 16.00 Boss</text>
+
+    <!-- Leader Callout: 4x M5 Hole -->
+    <polyline points="140,157 115,124 55,124" fill="none" stroke="#38bdf8" stroke-width="1.2"/>
+    <circle cx="140" cy="157" r="2.5" fill="#38bdf8"/>
+    <text x="50" y="128" class="mono" font-size="10.5" font-weight="600" fill="#bae6fd" text-anchor="end">4× M5 (DP 12)</text>
+
+    <!-- 3D Coordinate Triad (XYZ Gizmo) -->
+    <g transform="translate(42, 266)">
+      <circle cx="0" cy="0" r="3.5" fill="#ffffff"/>
+      <!-- X Axis (Red) -->
+      <line x1="0" y1="0" x2="32" y2="18" stroke="#ef4444" stroke-width="2.2" marker-end="url(#b_axisR)"/>
+      <text x="38" y="24" class="sans" font-size="10.5" font-weight="800" fill="#ef4444">X</text>
+      <!-- Y Axis (Green) -->
+      <line x1="0" y1="0" x2="-32" y2="18" stroke="#22c55e" stroke-width="2.2" marker-end="url(#b_axisG)"/>
+      <text x="-44" y="24" class="sans" font-size="10.5" font-weight="800" fill="#22c55e">Y</text>
+      <!-- Z Axis (Blue) -->
+      <line x1="0" y1="0" x2="0" y2="-36" stroke="#38bdf8" stroke-width="2.2" marker-end="url(#b_axisB)"/>
+      <text x="-3" y="-42" class="sans" font-size="10.5" font-weight="800" fill="#38bdf8">Z</text>
+    </g>
+
+    <!-- Bottom Feature Tag -->
+    <g transform="translate(205, 276)">
+      <rect width="245" height="22" rx="11" fill="#040c1a" stroke="#1e3a5f" stroke-width="1"/>
+      <text x="122" y="15" class="mono" font-size="9.5" fill="#7dd3fc" text-anchor="middle">Mass: 0.182 kg · Vol: 23.41 cm³</text>
+    </g>
   </g>
 </svg>

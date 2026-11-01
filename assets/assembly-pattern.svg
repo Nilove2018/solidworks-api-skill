@@ -1,8 +1,216 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="530" viewBox="0 0 1200 530" role="img" aria-label="Skeleton assembly pattern">
-  <defs><marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#fbbf24"/></marker><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="#0d2741"/></linearGradient><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0 L0 0 0 24" fill="none" stroke="#1d3a57" stroke-width="0.6"/></pattern><marker id="flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="flowg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker></defs>
-  <rect width="1200" height="530" rx="18" fill="#f8fafc" stroke="#e2e8f0"/>
-  <text x="24" y="44" fill="#0f172a" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Assembly pattern: skeleton + mate recipes</text>
-  <rect x="40" y="76" width="340" height="104" rx="12" fill="#ffffff" stroke="#0284c7" stroke-width="2"/><text x="210" y="106" fill="#0f172a" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">Printed / machined part</text><text x="210" y="129" fill="#475569" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" text-anchor="middle">modelled in the product frame</text><rect x="52" y="142" width="316" height="26" rx="6" fill="#f8fafc" stroke="#0284c7" stroke-width="0.8"/><text x="210" y="160" fill="#0284c7" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="12" text-anchor="middle">Front↔Front · Top↔Top · Right↔Right</text><path d="M380,128 C405.0,128 405.0,230 424,230" fill="none" stroke="#0284c7" stroke-width="2" marker-end="url(#flow)"/><rect x="40" y="380" width="340" height="104" rx="12" fill="#ffffff" stroke="#7c3aed" stroke-width="2"/><text x="210" y="410" fill="#0f172a" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">Sub-assembly (PCBA, vendor STEP)</text><text x="210" y="433" fill="#475569" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" text-anchor="middle">own frame + named target planes</text><rect x="52" y="446" width="316" height="26" rx="6" fill="#f8fafc" stroke="#7c3aed" stroke-width="0.8"/><text x="210" y="464" fill="#7c3aed" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="12" text-anchor="middle">Front↔PL_Z_x · Right↔PL_X_x · Top↔PL_Y_x</text><path d="M380,432 C405.0,432 405.0,330 424,330" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#flow)"/><rect x="820" y="76" width="340" height="104" rx="12" fill="#ffffff" stroke="#16a34a" stroke-width="2"/><text x="990" y="106" fill="#0f172a" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">Screw / pin / insert</text><text x="990" y="129" fill="#475569" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" text-anchor="middle">datums: AX + PL_SEAT</text><rect x="832" y="142" width="316" height="26" rx="6" fill="#f8fafc" stroke="#16a34a" stroke-width="0.8"/><text x="990" y="160" fill="#16a34a" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="12" text-anchor="middle">AX↔AX_Pn · PL_SEAT↔PL_Z_TOP · Top∥Top</text><path d="M820,128 C795.0,128 795.0,230 776,230" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#flow)"/><rect x="820" y="380" width="340" height="104" rx="12" fill="#ffffff" stroke="#dc2626" stroke-width="2"/><text x="990" y="410" fill="#0f172a" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">Spring / mechanism</text><text x="990" y="433" fill="#475569" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" text-anchor="middle">flexible sub-assembly</text><rect x="832" y="446" width="316" height="26" rx="6" fill="#f8fafc" stroke="#dc2626" stroke-width="0.8"/><text x="990" y="464" fill="#dc2626" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="12" text-anchor="middle">limit distance mate: solid … free length</text><path d="M820,432 C795.0,432 795.0,330 776,330" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#flow)"/>
-  <rect x="430" y="185" width="340" height="190" rx="16" fill="#fff7ed" stroke="#ea580c" stroke-width="2.4"/><text x="600" y="222" fill="#9a3412" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle">Skeleton part (fixed)</text><text x="600" y="248" fill="#7c2d12" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle">only named datums at design coordinates</text><text x="600" y="282" fill="#c2410c" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="14" text-anchor="middle">PL_Z_TOP   PL_Z_SPLIT   PL_Z_BOARD</text><text x="600" y="308" fill="#c2410c" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="14" text-anchor="middle">AX_P1   AX_P2   AX_H1 … AX_Hn</text><text x="600" y="334" fill="#c2410c" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="14" text-anchor="middle">Front / Top / Right Plane</text>
-  <text x="600" y="515" fill="#475569" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle">Place each component at its exact pose first, then mate it to the skeleton, so mates lock parts and never move them.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="530" viewBox="0 0 1200 530" role="img" aria-label="Skeleton Assembly Pattern and Proven Mate Recipes">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="a_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060b16"/>
+      <stop offset="50%" stop-color="#091426"/>
+      <stop offset="100%" stop-color="#0d1f3a"/>
+    </linearGradient>
+
+    <!-- Skeleton Centerpiece Gradient -->
+    <linearGradient id="a_skelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a1204"/>
+      <stop offset="50%" stop-color="#1d0d03"/>
+      <stop offset="100%" stop-color="#120702"/>
+    </linearGradient>
+
+    <!-- Quadrant Card Gradients -->
+    <linearGradient id="a_qCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0d1b32" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#08101e" stop-opacity="0.98"/>
+    </linearGradient>
+
+    <pattern id="a_grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#1e3a5f" stroke-width="0.5" stroke-opacity="0.45"/>
+    </pattern>
+
+    <!-- Glows and Shadows -->
+    <filter id="a_shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <filter id="a_skelGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#ea580c" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- Connectors -->
+    <marker id="a_mBlue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0284c7"/>
+    </marker>
+    <marker id="a_mPurple" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#8b5cf6"/>
+    </marker>
+    <marker id="a_mGreen" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#10b981"/>
+    </marker>
+    <marker id="a_mRed" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f43f5e"/>
+    </marker>
+  </defs>
+
+  <style>
+    .mono { font-family: "Cascadia Code", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1200" height="530" rx="16" fill="url(#a_bg)"/>
+  <rect width="1200" height="530" rx="16" fill="url(#a_grid)"/>
+  <rect width="1198" height="528" x="1" y="1" rx="15" fill="none" stroke="#1e3a5f" stroke-width="1.2" stroke-opacity="0.8"/>
+
+  <!-- Top Title Header -->
+  <g transform="translate(36, 18)">
+    <text x="0" y="24" class="sans" font-size="21" font-weight="800" fill="#ffffff" letter-spacing="-0.3">SKELETON ASSEMBLY PATTERN &amp; PROVEN MATE RECIPES</text>
+    <text x="0" y="42" class="sans" font-size="12.5" fill="#94a3b8">Deterministic constraint solving without screen coordinates · Zero mate errors · 100% fully-defined assemblies</text>
+    
+    <!-- Top Right Pills -->
+    <g transform="translate(850, 6)">
+      <rect width="140" height="24" rx="12" fill="#2d1406" stroke="#ea580c" stroke-width="1"/>
+      <text x="70" y="16" class="sans" font-size="10.5" font-weight="700" fill="#fb923c" text-anchor="middle">MASTER DATUM SPINE</text>
+
+      <rect x="148" y="0" width="134" height="24" rx="12" fill="#082f49" stroke="#0284c7" stroke-width="1"/>
+      <text x="215" y="16" class="sans" font-size="10.5" font-weight="700" fill="#38bdf8" text-anchor="middle">ZERO DRIFT MATING</text>
+    </g>
+  </g>
+
+  <!-- ==================== BUS CONNECTOR LINES ==================== -->
+  <!-- Top-Left to Skeleton -->
+  <path d="M 374, 130 C 400, 130 400, 220 422, 220" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#a_mBlue)"/>
+  <!-- Bottom-Left to Skeleton -->
+  <path d="M 374, 396 C 400, 396 400, 320 422, 320" fill="none" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#a_mPurple)"/>
+  <!-- Top-Right to Skeleton -->
+  <path d="M 826, 130 C 800, 130 800, 220 778, 220" fill="none" stroke="#10b981" stroke-width="2.5" marker-end="url(#a_mGreen)"/>
+  <!-- Bottom-Right to Skeleton -->
+  <path d="M 826, 396 C 800, 396 800, 320 778, 320" fill="none" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#a_mRed)"/>
+
+  <!-- ==================== CENTERPIECE: SKELETON PART ==================== -->
+  <g transform="translate(426, 160)" filter="url(#a_skelGlow)">
+    <rect width="348" height="216" rx="14" fill="url(#a_skelGrad)" stroke="#ea580c" stroke-width="2.2"/>
+    <rect width="348" height="32" rx="14" fill="#431407"/>
+    <path d="M 0 18 L 0 32 L 348 32 L 348 18 z" fill="#431407"/>
+
+    <!-- Header & Badge -->
+    <circle cx="22" cy="16" r="6" fill="#ea580c"/>
+    <text x="36" y="21" class="sans" font-size="14" font-weight="800" fill="#fed7aa">Skeleton.SLDPRT (Fixed at Origin)</text>
+
+    <!-- Subtitle -->
+    <text x="174" y="48" class="sans" font-size="11" font-weight="600" fill="#fdba74" text-anchor="middle">Carries NO solid bodies · Master Design Datums</text>
+
+    <!-- Datums Box -->
+    <g transform="translate(14, 56)">
+      <!-- Box 1: Primary Planes -->
+      <rect width="320" height="36" rx="7" fill="#180b03" stroke="#9a3412" stroke-width="1"/>
+      <text x="10" y="15" class="sans" font-size="10" font-weight="700" fill="#fed7aa">PRIMARY REFERENCE PLANES (0,0,0):</text>
+      <text x="10" y="29" class="mono" font-size="11" font-weight="700" fill="#fb923c">Front Plane (XY) · Top (XZ) · Right (YZ)</text>
+
+      <!-- Box 2: Named Offset Planes -->
+      <g transform="translate(0, 42)">
+        <rect width="320" height="36" rx="7" fill="#180b03" stroke="#9a3412" stroke-width="1"/>
+        <text x="10" y="15" class="sans" font-size="10" font-weight="700" fill="#fed7aa">NAMED OFFSET PLANES (DESIGN LEVELS):</text>
+        <text x="10" y="29" class="mono" font-size="11" font-weight="700" fill="#fb923c">PL_Z_TOP · PL_Z_SPLIT · PL_Z_BOARD</text>
+      </g>
+
+      <!-- Box 3: Construction Axes -->
+      <g transform="translate(0, 84)">
+        <rect width="320" height="36" rx="7" fill="#180b03" stroke="#9a3412" stroke-width="1"/>
+        <text x="10" y="15" class="sans" font-size="10" font-weight="700" fill="#fed7aa">CONSTRUCTION AXES (HOLE &amp; PIN CENTRES):</text>
+        <text x="10" y="29" class="mono" font-size="11" font-weight="700" fill="#fb923c">AX_P1 · AX_P2 · AX_H1 ... AX_Hn</text>
+      </g>
+    </g>
+
+    <!-- Bottom Indicator -->
+    <rect x="24" y="190" width="300" height="16" rx="8" fill="#290f04"/>
+    <text x="174" y="202" class="mono" font-size="9" font-weight="700" fill="#ffedd5" text-anchor="middle">IMMUTABLE MASTER COORDINATE FRAME</text>
+  </g>
+
+  <!-- ==================== QUADRANT 1: TOP LEFT (HOUSING) ==================== -->
+  <g transform="translate(26, 68)" filter="url(#a_shadow)">
+    <rect width="348" height="130" rx="12" fill="url(#a_qCardGrad)" stroke="#0284c7" stroke-width="1.6"/>
+    <rect width="348" height="5" rx="2.5" fill="#0284c7"/>
+
+    <!-- Header -->
+    <circle cx="22" cy="22" r="10" fill="#0c233c"/>
+    <text x="22" y="26" class="sans" font-size="11" font-weight="700" fill="#38bdf8" text-anchor="middle">1</text>
+    <text x="38" y="24" class="sans" font-size="14" font-weight="700" fill="#ffffff">Printed / Machined Housing</text>
+    <text x="38" y="38" class="sans" font-size="10.5" fill="#7dd3fc">Modeled directly in the product design frame</text>
+
+    <!-- Mate Recipe Box -->
+    <rect x="14" y="46" width="320" height="46" rx="6" fill="#050a14" stroke="#0284c7" stroke-width="0.8"/>
+    <text x="22" y="63" class="mono" font-size="10.5" fill="#7dd3fc">Front &lt;-&gt; Front  ·  Top &lt;-&gt; Top  ·  Right &lt;-&gt; Right</text>
+    <text x="22" y="81" class="sans" font-size="10" font-weight="600" fill="#38bdf8">Recipe: 3 Coincident Plane Mates (Direct Frame Match)</text>
+
+    <!-- Footer Insight -->
+    <rect x="14" y="98" width="320" height="22" rx="5" fill="#061c33"/>
+    <text x="174" y="113" class="sans" font-size="9.5" font-weight="700" fill="#bae6fd" text-anchor="middle">[PASS] Instant 0 DOF Rigid Lock · No Screen Coordinates</text>
+  </g>
+
+  <!-- ==================== QUADRANT 2: BOTTOM LEFT (SUB-ASSEMBLY) ==================== -->
+  <g transform="translate(26, 336)" filter="url(#a_shadow)">
+    <rect width="348" height="130" rx="12" fill="url(#a_qCardGrad)" stroke="#8b5cf6" stroke-width="1.6"/>
+    <rect width="348" height="5" rx="2.5" fill="#8b5cf6"/>
+
+    <!-- Header -->
+    <circle cx="22" cy="22" r="10" fill="#241442"/>
+    <text x="22" y="26" class="sans" font-size="11" font-weight="700" fill="#c084fc" text-anchor="middle">2</text>
+    <text x="38" y="24" class="sans" font-size="14" font-weight="700" fill="#ffffff">Sub-Assembly (PCBA, COTS, Vendor)</text>
+    <text x="38" y="38" class="sans" font-size="10.5" fill="#c084fc">Independent internal frame + named target datums</text>
+
+    <!-- Mate Recipe Box -->
+    <rect x="14" y="46" width="320" height="46" rx="6" fill="#050a14" stroke="#8b5cf6" stroke-width="0.8"/>
+    <text x="22" y="63" class="mono" font-size="10.5" fill="#c084fc">Sub_Front &lt;-&gt; PL_Z_BOARD  ·  Right &lt;-&gt; PL_X_REF</text>
+    <text x="22" y="81" class="sans" font-size="10" font-weight="600" fill="#a78bfa">Recipe: Skeleton Offset Planes (Target Datums)</text>
+
+    <!-- Footer Insight -->
+    <rect x="14" y="98" width="320" height="22" rx="5" fill="#1e1038"/>
+    <text x="174" y="113" class="sans" font-size="9.5" font-weight="700" fill="#f3e8ff" text-anchor="middle">[PASS] Isolated from Vendor Revisions · Relocate via 1 Plane</text>
+  </g>
+
+  <!-- ==================== QUADRANT 3: TOP RIGHT (FASTENERS) ==================== -->
+  <g transform="translate(826, 68)" filter="url(#a_shadow)">
+    <rect width="348" height="130" rx="12" fill="url(#a_qCardGrad)" stroke="#10b981" stroke-width="1.6"/>
+    <rect width="348" height="5" rx="2.5" fill="#10b981"/>
+
+    <!-- Header -->
+    <circle cx="22" cy="22" r="10" fill="#062e1e"/>
+    <text x="22" y="26" class="sans" font-size="11" font-weight="700" fill="#34d399" text-anchor="middle">3</text>
+    <text x="38" y="24" class="sans" font-size="14" font-weight="700" fill="#ffffff">Hardware / Fasteners (Screws, Pins)</text>
+    <text x="38" y="38" class="sans" font-size="10.5" fill="#6ee7b7">Cylindrical axis + shoulder seating datums</text>
+
+    <!-- Mate Recipe Box -->
+    <rect x="14" y="46" width="320" height="46" rx="6" fill="#050a14" stroke="#10b981" stroke-width="0.8"/>
+    <text x="22" y="63" class="mono" font-size="10" fill="#6ee7b7">Cyl_Axis &lt;-&gt; AX_Pn  ·  PL_SEAT &lt;-&gt; PL_Z_TOP  ·  Top || Top</text>
+    <text x="22" y="81" class="sans" font-size="10" font-weight="600" fill="#34d399">Recipe: Concentric Axis + Coincident Seat + Parallel Lock</text>
+
+    <!-- Footer Insight -->
+    <rect x="14" y="98" width="320" height="22" rx="5" fill="#032014"/>
+    <text x="174" y="113" class="sans" font-size="9.5" font-weight="700" fill="#d1fae5" text-anchor="middle">[PASS] Exact Seating Depth · Never Flips or Inverts Direction</text>
+  </g>
+
+  <!-- ==================== QUADRANT 4: BOTTOM RIGHT (MECHANISMS) ==================== -->
+  <g transform="translate(826, 336)" filter="url(#a_shadow)">
+    <rect width="348" height="130" rx="12" fill="url(#a_qCardGrad)" stroke="#f43f5e" stroke-width="1.6"/>
+    <rect width="348" height="5" rx="2.5" fill="#f43f5e"/>
+
+    <!-- Header -->
+    <circle cx="22" cy="22" r="10" fill="#330d17"/>
+    <text x="22" y="26" class="sans" font-size="11" font-weight="700" fill="#fb7185" text-anchor="middle">4</text>
+    <text x="38" y="24" class="sans" font-size="14" font-weight="700" fill="#ffffff">Dynamic Mechanisms &amp; Springs</text>
+    <text x="38" y="38" class="sans" font-size="10.5" fill="#fda4af">Flexible sub-assemblies with kinematic range</text>
+
+    <!-- Mate Recipe Box -->
+    <rect x="14" y="46" width="320" height="46" rx="6" fill="#050a14" stroke="#f43f5e" stroke-width="0.8"/>
+    <text x="22" y="63" class="mono" font-size="10" fill="#fda4af">LimitDist: L_Solid … L_Free  ·  LimitAng: 0° … 90°</text>
+    <text x="22" y="81" class="sans" font-size="10" font-weight="600" fill="#fb7185">Recipe: com_put("Solving", swComponentFlexibleSolving)</text>
+
+    <!-- Footer Insight -->
+    <rect x="14" y="98" width="320" height="22" rx="5" fill="#2a0812"/>
+    <text x="174" y="113" class="sans" font-size="9.5" font-weight="700" fill="#ffe4e6" text-anchor="middle">[PASS] Articulates in Main Assembly Without Rebuild Errors</text>
+  </g>
+
+  <!-- ==================== BOTTOM GOLDEN RULE CALLOUT ==================== -->
+  <g transform="translate(26, 480)">
+    <rect width="1148" height="34" rx="8" fill="#0c1b32" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="574" y="21" class="sans" font-size="11.5" font-weight="700" fill="#f8fafc" text-anchor="middle">
+      <tspan fill="#f59e0b">CRITICAL AXIOM:</tspan> Place each component at its exact design pose <tspan fill="#38bdf8">FIRST</tspan>, then apply mates to the Skeleton. Mates must only <tspan fill="#34d399">LOCK</tspan> degrees of freedom — never drag geometry.
+    </text>
+  </g>
 </svg>

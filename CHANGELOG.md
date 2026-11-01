@@ -1,5 +1,24 @@
 # Changelog
 
+## 2.4.0 (2026-11-01)
+
+Lessons from a thin-walled revolved part and its A3 manufacturing drawing: the part built first
+time; the drawing took three builds for layout alone.
+
+### Added
+- §8.2: dimension turned and revolved parts in the side view (edge-on circles give clean Ø
+  dimensions and heights); `SetPrecision3` per dimension.
+- §8.3: `check_layout` on the planned zones before the first view, with approximate A3 ISO border
+  and title-block numbers; check the PDF words and overlaps, never "checked" from a screenshot.
+- §11.1: a Drawings group in the troubleshooting playbook (clipped-looking values, overlaps
+  found by the user).
+- §12: "Plan vs built" check: planned numbers and mass against the model in the same run, and
+  every planned feature built or struck from the plan and the drawing notes.
+- §14.4: thin-walled revolved parts (one profile with the wall in it; normal offset on a sloped
+  wall, t / cos(slope) vertically).
+- §15: ask once about a likely typo, with the likely reading as the recommended option.
+- `swlib.py`: `check_layout`, `pdf_words`, `box_overlaps`.
+
 ## 2.3.2 (2026-10-31)
 
 SolidWorks Test Runs of the whole `swlib` after the 2.3 changes: 58 of 58 checks passed
