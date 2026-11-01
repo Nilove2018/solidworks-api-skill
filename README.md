@@ -291,7 +291,8 @@ the type library or the official help, never from memory.**
 
 [GNU GPL version 3](LICENSE) © 2026 Nilove Mandal.
 You may use, study, change and share it, also at work. If you share a changed version, you must
-publish it under GPL-3.0 too, with its source.
+publish it under GPL-3.0 too, with its source. The artwork in `assets/` is not covered by the GPL;
+see [TRADEMARKS.md](TRADEMARKS.md).
 
 <sub>SOLIDWORKS is a registered trademark of Dassault Systèmes SolidWorks Corporation. This project
 is independent and is not affiliated with, endorsed by, or sponsored by Dassault Systèmes.
