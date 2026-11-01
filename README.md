@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
+  <a href="LICENSE"><img alt="License: GPL-3.0" src="https://img.shields.io/badge/License-GPL--3.0-blue.svg"></a>
   <img alt="Claude Code skill" src="https://img.shields.io/badge/Claude%20Code-Skill%20%2B%20Plugin-7c3aed">
   <img alt="SOLIDWORKS 2023-2025" src="https://img.shields.io/badge/SOLIDWORKS-2023%20%E2%80%93%202025-dc2626">
   <img alt="Python 3.9+" src="https://img.shields.io/badge/Python-3.9%2B-3776ab?logo=python&logoColor=white">
@@ -289,9 +289,9 @@ the type library or the official help, never from memory.**
 
 ## License
 
-[MIT](LICENSE) © 2026 Nilove Mandal.
-Free to use, change and share, including commercially, as long as you keep the copyright notice
-and the license text.
+[GNU GPL version 3](LICENSE) © 2026 Nilove Mandal.
+You may use, study, change and share it, also at work. If you share a changed version, you must
+publish it under GPL-3.0 too, with its source.
 
 <sub>SOLIDWORKS is a registered trademark of Dassault Systèmes SolidWorks Corporation. This project
 is independent and is not affiliated with, endorsed by, or sponsored by Dassault Systèmes.
